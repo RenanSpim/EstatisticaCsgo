@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Load the CSV file to examine its structure
-csgo_data = pd.read_csv('data/csgo_games.csv')
+csgo_data = pd.read_csv('data/csgo_games_sorted.csv')
 
 # Initialize parameters
 initial_elo = 1500
