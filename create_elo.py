@@ -23,7 +23,12 @@ def update_elo(elo_a, elo_b, score_a):
 # Process each match in chronological order
 elo_after_match = []  # To store Elo ratings after each match
 
-for _, row in csgo_data.iterrows():
+for idx, row in csgo_data.iterrows():
+    if row['team_1'] == 'NATUS VINCERE':
+        csgo_data.loc[idx, 'team_1'] = 'NAVI'
+    elif row['team_2'] == 'NATUS VINCERE':
+        csgo_data.loc[idx, 'team_2'] = 'NAVI'
+    
     team_1, team_2 = row['team_1'], row['team_2']
     t1_points, t2_points = row['t1_points'], row['t2_points']
     
